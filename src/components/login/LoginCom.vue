@@ -10,7 +10,8 @@
             <el-input v-model="passwd" prefix-icon="Lock" :show-password="true" placeholder="请输入密码" />
         </div>
         <div class="input">
-            <el-button @click="login" @key.enter="login" style="width: 500px;" type="primary" :disabled="disabled">登录</el-button>
+            <el-button @click="login" @key.enter="login" style="width: 500px;" type="primary"
+                :disabled="disabled">登录</el-button>
         </div>
     </div>
 </template>
@@ -46,6 +47,10 @@ export default {
             console.log('disabled.....')
             return this.name.length == 0 || this.passwd.length == 0
         }
+    },
+    mounted() {
+        this.name = 'a'
+        this.passwd = 'u'
     }
 }
 </script>

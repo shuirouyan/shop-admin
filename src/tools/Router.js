@@ -21,6 +21,46 @@ const Router = createRouter({
                     path: 'order/:type',
                     component: OrderCom,
                     name: 'Order'
+                },
+                {
+                    path: 'goods/:type',
+                    component: OrderCom,
+                    name: 'Goods'
+                },
+                {
+                    path: 'category',
+                    component: OrderCom,
+                    name: 'GoodsCategory'
+                },
+                {
+                    path: 'ownerlist',
+                    component: OrderCom,
+                    name: 'ownerlist'
+                },
+                {
+                    path: 'ownerreq',
+                    component: OrderCom,
+                    name: 'ownerreq'
+                },
+                {
+                    path: 'ownerorder',
+                    component: OrderCom,
+                    name: 'ownerorder'
+                },
+                {
+                    path: 'tradeinfo',
+                    component: OrderCom,
+                    name: 'tradeinfo'
+                },
+                {
+                    path: 'tradelist',
+                    component: OrderCom,
+                    name: 'tradelist'
+                },
+                {
+                    path: 'data',
+                    component: OrderCom,
+                    name: 'data'
                 }
             ],
             redirect: '/home/order/0'
