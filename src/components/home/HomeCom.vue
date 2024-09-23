@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-aside width="250px">
+        <el-aside height="500px">
             <el-container id="top">
                 <img style="width: 25px; height: 25px; margin: auto 40; margin-right: 0;" src="~@/assets/logo.png"
                     alt="">
@@ -69,6 +69,8 @@
                     </template>
                     <el-menu-item index="/home/data">数据统计</el-menu-item>
                 </el-sub-menu>
+
+
             </el-menu>
         </el-aside>
         <el-main style="padding: 0;">
@@ -90,6 +92,7 @@
 
 <script>
 import Store from '@/tools/Storage';
+import Mock from '@/mock/Mock';
 export default {
     name: 'HomeCom',
     data() {
@@ -114,6 +117,8 @@ export default {
     },
     mounted() {
         console.log('$route.path:', this.$route.path)
+        const arr = Mock.getOrder(0)
+        console.log('array:', arr)
     }
 }
 </script>
