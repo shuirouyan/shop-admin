@@ -82,6 +82,9 @@ export default {
             ElMessage.success({
                 message: '设置商品基本属性:' + JSON.stringify(this.queryParam)
             })
+        },
+        cancel() {
+            
         }
     }
 }

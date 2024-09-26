@@ -25,6 +25,16 @@ export default {
         BaseSettings: GoodsBaseSettings,
         DetailSettings: GoodsDetailSettings,
         PriceSettings: GoodsPriceSettings,
+    },
+    data() {
+        return {
+            activeTab: '1'
+        }
+    },
+    methods: {
+        handlerClick() {
+            console.log('handlerClick()')
+        }
     }
 }
 </script>

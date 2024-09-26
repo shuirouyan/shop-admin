@@ -91,6 +91,9 @@ export default {
                 message: '设置价格与库存:' + JSON.stringify(this.queryParam)
             })
         }
+    },
+    mounted(){
+        
     }
 }
 </script>
