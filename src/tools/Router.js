@@ -1,8 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import Store from "./Storage";
 import HomeCom from "@/components/home/HomeCom.vue";
 import LoginCom from "@/components/login/LoginCom.vue";
 import OrderCom from "@/components/order/OrderCom.vue";
-import Store from "./Storage";
+import AddGood from "@/components/goods/AddGood.vue";
+import Goods from "@/components/goods/Goods.vue";
 
 const Router = createRouter({
     history: createWebHashHistory(),
@@ -24,8 +26,13 @@ const Router = createRouter({
                 },
                 {
                     path: 'goods/:type',
-                    component: OrderCom,
+                    component: Goods,
                     name: 'Goods'
+                },
+                {
+                    path: 'addGood/:type',
+                    component: AddGood,
+                    name: 'AddGood'
                 },
                 {
                     path: 'category',

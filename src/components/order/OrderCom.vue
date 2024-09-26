@@ -80,8 +80,6 @@
                     <el-button size="small" type="primary" @click="callUser(scope.row)">联系客户</el-button>
                 </template>
             </el-table-column>
-
-
         </el-table>
     </div>
 
