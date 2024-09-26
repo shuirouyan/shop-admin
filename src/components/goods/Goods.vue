@@ -35,12 +35,6 @@
                     <el-option label="否" :value="0"></el-option>
                     <el-option label="是" :value="1"></el-option>
                 </el-select>
-                <!-- <el-select v-model="sellModeString" :empty-values="[null, undefined]" :value-on-clear="null" clearable
-                    placeholder="Select" style="width: 240px">
-                    <el-option key="1" label="汉字1" :value="1" />
-                    <el-option key="2" label="汉字2" :value="2" />
-                    <el-option key="3" label="汉字3" :value="3" />
-                </el-select> -->
             </div>
             <div class="input-tip">
                 是否过期：
@@ -59,7 +53,7 @@
         <el-container>
             <el-button type="primary" @click="requestData">检索</el-button>
             <el-button type="primary" @click="requestData">显示全部</el-button>
-            <el-button type="success" @click="requestData">新增商品</el-button>
+            <el-button type="success" @click="addGood">新增商品</el-button>
         </el-container>
     </div>
     <!-- list -->
