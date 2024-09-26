@@ -23,7 +23,7 @@ const Mock = {
         for (let i = 0; i < Random.integer(5, 10); i++) {
             arr.push(mock({
                 'name': (type == 0 ? '普通商品' : type == 1 ? '秒杀商品' : '今日推荐') + i,
-                'img': Random.dataImage('60x100', '商品示例图片'),
+                'img': Random.dataImage('300x250', '商品示例图片'),
                 'price': Random.integer(20, 500) + '元',
                 'count': Random.integer(10, 100),
                 'sellCount': Random.integer(10, 100),

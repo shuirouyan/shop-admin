@@ -17,8 +17,9 @@
             <div class="input-tip">
                 商品分类：
             </div>
-            <div class="input-field">
-                <el-select v-model="queryParam.category" placeholder="请选择分类">
+            <div class="input-field" style="width: 150px">
+                <el-select v-model="queryParam.category" :empty-values="[null, undefined]" :value-on-clear="null"
+                    placeholder="请选择分类">
                     <el-option v-for="item in categorys" :key="item" :label="item" :value="item"> </el-option>
                 </el-select>
             </div>
@@ -29,20 +30,26 @@
                 是否上架：
             </div>
             <div class="input-field">
-                <el-select v-model="sellModeString">
-                    <el-option key="0" label="否" :value="0"></el-option>
-                    <el-option key="1" label="是" :value="1"></el-option>
-                    <el-option key="2" label="全部" :value="2"></el-option>
+                <el-select v-model="sellModeString" style="width: 150px">
+                    <el-option label="全部" :value="2"></el-option>
+                    <el-option label="否" :value="0"></el-option>
+                    <el-option label="是" :value="1"></el-option>
                 </el-select>
+                <!-- <el-select v-model="sellModeString" :empty-values="[null, undefined]" :value-on-clear="null" clearable
+                    placeholder="Select" style="width: 240px">
+                    <el-option key="1" label="汉字1" :value="1" />
+                    <el-option key="2" label="汉字2" :value="2" />
+                    <el-option key="3" label="汉字3" :value="3" />
+                </el-select> -->
             </div>
             <div class="input-tip">
                 是否过期：
             </div>
             <div class="input-field">
-                <el-select v-model="expModeString">
+                <el-select v-model="expModeString" style="width: 150px">
+                    <el-option key="2" label="全部" :value="2"></el-option>
                     <el-option key="0" label="否" :value="0"></el-option>
                     <el-option key="1" label="是" :value="1"></el-option>
-                    <el-option key="2" label="全部" :value="2"></el-option>
                 </el-select>
             </div>
         </el-container>
@@ -58,12 +65,12 @@
     <!-- list -->
     <div>
         <el-table ref="multipleTable" :data="goodsData" tooltip-effect="dark" style="width: 100%;">
-            <el-table-column label="商品" width="200">
+            <el-table-column label="商品" width="200" align="center">
                 <template #default="scope">
-                    <div style="align-items: center">
+                    <div>
                         <el-image :src="scope.row.img"></el-image>
                     </div>
-                    <div style="align-items: center">{{ scope.row.name }}</div>
+                    <div>{{ scope.row.name }}</div>
                 </template>
             </el-table-column>
             <el-table-column prop="price" label="价格" width="100"></el-table-column>
@@ -99,7 +106,7 @@ export default {
             queryParam: {
                 name: '',
                 id: '',
-                category: '',
+                category: '全部',
                 sellMode: 2,// 0否 1是 2全部
                 expMode: 2
             }
@@ -137,6 +144,7 @@ export default {
     computed: {
         sellModeString: {
             get() {
+                console.log('sellModeString sellMode:', this.queryParam.sellMode)
                 if (this.queryParam.sellMode == 2) {
                     return '全部'
                 }
