@@ -35,6 +35,22 @@ const Mock = {
             }))
         }
         return arr
+    },
+    getManagerList() {
+        let arr = []
+        for (let i = 0; i < Random.integer(6, 10); i++) {
+            arr.push(mock({
+                'people': Random.csentence(),
+                'weixin': Random.string(7, 10),
+                'state': Random.boolean(),
+                'income': Random.integer(0, 500000) + '元',
+                'back': Random.integer(0, 1000) + '元',
+                'backPrice': Random.integer(0, 1000) + '元',
+                'source': '站内',
+                'custom': Random.integer(0, 50),
+                'time': Random.datetime('yyyy-MM-dd A HH:mm:ss'),
+            }))
+        }
     }
 }
 

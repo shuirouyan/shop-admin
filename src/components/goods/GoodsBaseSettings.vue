@@ -51,7 +51,7 @@
                 </el-select>
             </div>
             <div style="margin-top: 6px;">
-                <el-button type="primary" size="default" round>添加分类</el-button>
+                <el-button type="primary" size="default" round @click="addCategory">添加分类</el-button>
             </div>
         </el-container>
         <el-container class="content-row">
@@ -84,7 +84,10 @@ export default {
             })
         },
         cancel() {
-            
+
+        },
+        addCategory() {
+            this.$router.push('/home/category/add')
         }
     }
 }

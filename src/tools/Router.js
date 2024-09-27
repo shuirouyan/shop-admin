@@ -5,6 +5,7 @@ import LoginCom from "@/components/login/LoginCom.vue";
 import OrderCom from "@/components/order/OrderCom.vue";
 import AddGood from "@/components/goods/AddGood.vue";
 import Goods from "@/components/goods/Goods.vue";
+import GoodsCategory from "@/components/goods/GoodsCategory.vue";
 
 const Router = createRouter({
     history: createWebHashHistory(),
@@ -38,6 +39,11 @@ const Router = createRouter({
                     path: 'category',
                     component: OrderCom,
                     name: 'GoodsCategory'
+                },
+                {
+                    path: 'category/add',
+                    component: GoodsCategory,
+                    name: 'AddGoodsCategory'
                 },
                 {
                     path: 'ownerlist',

@@ -1,9 +1,4 @@
 <template>
-    <div>
-        <button @click="insertText">insert text</button>
-        <button @click="printHtml">print html</button>
-        <!-- <button @click="disable">disable</button> -->
-    </div>
     <div style="border: 1px solid #ccc; margin-top: 10px">
         <Toolbar :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode"
             style="border-bottom: 1px solid #ccc" />
@@ -11,9 +6,9 @@
             @onCreated="handleCreated" @onChange="handleChange" @onDestroyed="handleDestroyed" @onFocus="handleFocus"
             @onBlur="handleBlur" @customAlert="customAlert" @customPaste="customPaste" />
     </div>
-    <div style="margin-top: 10px">
+    <!-- <div style="margin-top: 10px">
         <textarea v-model="valueHtml" readonly style="width: 100%; height: 200px; outline: none"></textarea>
-    </div>
+    </div> -->
 </template>
 
 <script>
@@ -23,7 +18,7 @@ import { onBeforeUnmount, ref, shallowRef, onMounted } from 'vue'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 export default {
     name: 'GoodsEditor',
-    emits: ['contentChange'], 
+    emits: ['contentChange'],
     components: {
         Editor, Toolbar
     },
@@ -38,16 +33,18 @@ export default {
         }
     },
     setup(_, { emit }) {
+        // 文档地址：https://www.wangeditor.com/v5/for-frame.html#%E4%BD%BF%E7%94%A8-1
         // 编辑器实例，必须用 shallowRef，重要！
         const editorRef = shallowRef();
-
+        // 初始内容
+        const initContent = '<p>请输入内容....</p>'
         // 内容 HTML
-        const valueHtml = ref('<p>hello</p>');
+        const valueHtml = ref('');
 
         // 模拟 ajax 异步获取内容
         onMounted(() => {
             setTimeout(() => {
-                valueHtml.value = '<p>模拟 Ajax 异步设置内容</p>';
+                valueHtml.value = initContent;
             }, 1500);
         });
 
@@ -73,6 +70,10 @@ export default {
         };
         const handleFocus = (editor) => {
             console.log('focus', editor);
+            if (editor.getHtml() == initContent) {
+                // 清空初始内容
+                editor.clear()
+            }
         };
         const handleBlur = (editor) => {
             console.log('blur', editor);
@@ -98,17 +99,7 @@ export default {
             editor.insertText('hello world');
         };
 
-        const printHtml = () => {
-            const editor = editorRef.value;
-            if (editor == null) return;
-            console.log(editor.getHtml());
-        };
 
-        // const disable = () => {
-        //     const editor = editorRef.value;
-        //     if (editor == null) return;
-        //     editor.disable()
-        // };
         return {
             editorRef,
             valueHtml,
@@ -120,7 +111,6 @@ export default {
             customAlert,
             customPaste,
             insertText,
-            printHtml,
         };
     },
 }
