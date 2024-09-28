@@ -47,9 +47,28 @@ const Mock = {
                 'back': Random.integer(0, 1000) + '元',
                 'backPrice': Random.integer(0, 1000) + '元',
                 'source': '站内',
-                'custom': Random.integer(0, 50),
+                'customer': Random.integer(0, 50),
                 'time': Random.datetime('yyyy-MM-dd A HH:mm:ss'),
             }))
+        }
+        return arr
+    },
+    getChartsData() {
+        let arr = []
+        for (let i = 0; i < 6; i++) {
+            arr.push(Random.integer(0, 100))
+        }
+        return arr
+    },
+    getTradeData() {
+        
+        return {
+            'allTra': Random.integer(100, 50000),
+            'speTra': Random.integer(100, 50000),
+            'norTra': Random.integer(100, 50000),
+            'userCount': Random.integer(100, 50000),
+            'managerCount': Random.integer(100, 50000),
+            'time': Random.datetime('yyyy-MM-dd A HH:mm:ss'),
         }
     }
 }

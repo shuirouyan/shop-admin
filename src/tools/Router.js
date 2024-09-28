@@ -6,6 +6,8 @@ import OrderCom from "@/components/order/OrderCom.vue";
 import AddGood from "@/components/goods/AddGood.vue";
 import Goods from "@/components/goods/Goods.vue";
 import GoodsCategory from "@/components/goods/GoodsCategory.vue";
+import ManagerList from "@/components/manager/ManagerList.vue";
+import DataCom from "@/components/financial/DataCom.vue";
 
 const Router = createRouter({
     history: createWebHashHistory(),
@@ -47,8 +49,8 @@ const Router = createRouter({
                 },
                 {
                     path: 'ownerlist',
-                    component: OrderCom,
-                    name: 'ownerlist'
+                    component: ManagerList,
+                    name: 'OwnerList'
                 },
                 {
                     path: 'ownerreq',
@@ -72,7 +74,7 @@ const Router = createRouter({
                 },
                 {
                     path: 'data',
-                    component: OrderCom,
+                    component: DataCom,
                     name: 'data'
                 }
             ],
