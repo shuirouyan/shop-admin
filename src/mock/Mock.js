@@ -61,7 +61,6 @@ const Mock = {
         return arr
     },
     getTradeData() {
-        
         return {
             'allTra': Random.integer(100, 50000),
             'speTra': Random.integer(100, 50000),

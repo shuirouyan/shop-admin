@@ -25,51 +25,52 @@
             <div class="info">
                 实时数据-更新时间：{{ data.time }}
             </div>
+            <el-container class="content-row">
+                <div class="block">
+                    <div class="title">付款金额：10000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+                <div class="block">
+                    <div class="title">支付订单数：10000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+                <div class="block">
+                    <div class="title">付款人数：10000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+                <div class="block">
+                    <div class="title">付款转化率：8000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+            </el-container>
+            <el-container class="content-row">
+                <div class="block">
+                    <div class="title">访客数：10000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+                <div class="block">
+                    <div class="title">访问次数：10000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+                <div class="block">
+                    <div class="title">新增用户：10000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+                <div class="block">
+                    <div class="title">累计用户数：8000</div>
+                    <div class="subTitle">昨日：1100</div>
+                    <div class="subTitle">今日：8000</div>
+                </div>
+            </el-container>
         </div>
-        <el-container class="content-row">
-            <div class="block">
-                <div class="title">付款金额：10000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-            <div class="block">
-                <div class="title">支付订单数：10000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-            <div class="block">
-                <div class="title">付款人数：10000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-            <div class="block">
-                <div class="title">付款转化率：8000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-        </el-container>
-        <el-container class="content-row">
-            <div class="block">
-                <div class="title">访客数：10000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-            <div class="block">
-                <div class="title">访问次数：10000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-            <div class="block">
-                <div class="title">新增用户：10000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-            <div class="block">
-                <div class="title">累计用户数：8000</div>
-                <div class="subTitle">昨日：1100</div>
-                <div class="subTitle">今日：8000</div>
-            </div>
-        </el-container>
+
     </div>
 </template>
 <script>
@@ -117,7 +118,7 @@ export default {
 }
 
 .realTime {
-    border: 1px solid 1px;
+    border: 1px solid black;
     width: 1200px;
     height: 300px;
 }

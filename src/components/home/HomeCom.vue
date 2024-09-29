@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-aside height="500px">
+        <el-aside height="500px" width="250px">
             <el-container id="top">
                 <img style="width: 25px; height: 25px; margin: auto 40; margin-right: 0;" src="~@/assets/logo.png"
                     alt="">
